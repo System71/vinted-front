@@ -1,0 +1,71 @@
+h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 70px auto;
+}
+
+#signup-form {
+  width: 300px;
+}
+
+#signup-form > input {
+  display: block;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  font-size: 18px;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+.newsletter-div {
+  display: flex;
+  align-items: center;
+  color: #666666;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+.newsletter-div input {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+
+.conditions {
+  font-size: 12px;
+  line-height: 16px;
+  color: #999999;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+#signup-form button {
+  height: 45px;
+  width: 100%;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #2cb1ba;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+#signup-form a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #2cb1ba;
+}

@@ -1,0 +1,90 @@
+.hero {
+  display: flex;
+  align-items: center;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../../assets/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-box {
+  display: flex;
+  width: 410px;
+  height: 270px;
+  flex-direction: column;
+  gap: 35px;
+  background-color: white;
+  padding: 55px 25px;
+}
+
+.hero-box p {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.hero-box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  min-width: 115px;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #2cb1ba;
+  color: white;
+  text-align: center;
+  padding: 0;
+  flex-shrink: 1;
+}
+
+.offers {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  width: 235px;
+  height: 460px;
+  gap: 12px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #999999;
+  font-size: 12px;
+}
+
+.user img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.offer > img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  color: #999999;
+  font-size: 12px;
+  gap: 2px;
+}
+
+.product-price {
+  color: black;
+  font-size: 14px;
+}
