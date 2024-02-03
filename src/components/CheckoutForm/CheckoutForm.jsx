@@ -1,3 +1,4 @@
+import "./checkoutForm.css";
 import { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
@@ -11,10 +12,10 @@ const CheckoutForm = ({ name, price, token }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const CardElement = elements.getElement(CardElement);
+    const cardElement = elements.getElement(CardElement);
 
-    const stripeResponse = await stripe.createToken(CardElement, {
-      name: token,
+    const stripeResponse = await stripe.createToken(cardElement, {
+      name: "Nom acheteur",
     });
     console.log("stripeResponse=", stripeResponse);
 
@@ -24,7 +25,7 @@ const CheckoutForm = ({ name, price, token }) => {
       "https://lereacteur-vinted-api.herokuapp.com/payment",
       { token: stripeToken, title: name, amount: price }
     );
-    console.log(response.data);
+    console.log("response.data=", response.data);
 
     if (response.data.status === "succeeded") {
       setCompleted(true);
@@ -36,7 +37,7 @@ const CheckoutForm = ({ name, price, token }) => {
       {!completed ? (
         <form onSubmit={handleSubmit}>
           <CardElement />
-          <button type="submit">Valider</button>
+          <button type="submit">Pay</button>
         </form>
       ) : (
         <span>Paiement effectué!</span>

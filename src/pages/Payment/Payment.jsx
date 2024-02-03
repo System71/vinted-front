@@ -40,7 +40,7 @@ const Payment = ({ token }) => {
           payer {totalPrice} € (frais de protection et frais de port inclus).
         </p>
         <Elements stripe={stripePromise}>
-          <CheckoutForm name={name} price={price} />
+          <CheckoutForm name={name} price={price} token={token} />
         </Elements>
       </div>
     </div>
