@@ -1,6 +1,7 @@
 import "./publish.css";
 import axios from "axios";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [picture, setPicture] = useState(null);
@@ -68,7 +69,9 @@ const Publish = ({ token }) => {
     }
   };
 
-  return (
+  console.log("token=", token);
+
+  return token ? (
     <div className="main-publish">
       <div className="publish-container crawler">
         <h1>Vends ton article</h1>
@@ -208,6 +211,8 @@ const Publish = ({ token }) => {
         </form>
       </div>
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 

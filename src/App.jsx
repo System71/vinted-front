@@ -11,6 +11,7 @@ import Offer from "./pages/Offer/Offer";
 import { useState } from "react";
 import Cookies from "js-cookie";
 import Publish from "./pages/Publish/Publish";
+import Payment from "./pages/Payment/Payment";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || "");
@@ -50,6 +51,7 @@ function App() {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/login" element={<Login setToken={setToken} />}></Route>
         <Route path="/publish" element={<Publish token={token} />}></Route>
+        <Route path="/payment" element={<Payment token={token} />}></Route>
       </Routes>
     </Router>
   );

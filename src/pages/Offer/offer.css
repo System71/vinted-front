@@ -16,6 +16,7 @@
 .content {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   min-width: 400px;
   width: 400px;
   min-height: 600px;
@@ -82,4 +83,16 @@
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.content a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  color: white;
+  background-color: #09b1ba;
+  border-radius: 5px;
+  width: 100%;
+  height: 36px;
 }
