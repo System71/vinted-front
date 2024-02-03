@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import PriceSort from "../priceSort/priceSort.jsx";
+// import PriceSort from "../priceSort/priceSort.jsx";
 
 const Header = ({
   token,
@@ -59,14 +59,14 @@ const Header = ({
             }}
           />
           <p>Prix entre :</p>
-          <PriceSort
+          {/* <PriceSort
             values={values}
             setValues={setValues}
             setPriceMin={setPriceMin}
             setPriceMax={setPriceMax}
             priceMin={priceMin}
             priceMax={priceMax}
-          />
+          /> */}
         </div>
       </div>
       <div className="menu">
