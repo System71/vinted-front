@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useState } from "react";
-import PriceSort from "../priceSort/priceSort";
+import PriceSort from "../priceSort/priceSort.jsx";
 
 const Header = ({
   token,
