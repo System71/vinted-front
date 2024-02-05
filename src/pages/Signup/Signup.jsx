@@ -16,7 +16,7 @@ const Signup = () => {
     console.log("newsletter=", newsletter);
     try {
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        "https://site--vinted-backend--nh2bbcwygd2q.code.run/user/signup",
         {
           email: email,
           username: username,
@@ -24,7 +24,7 @@ const Signup = () => {
           newsletter: newsletter,
         }
       );
-      console.log("response.date=", response.data);
+      console.log("response.data=", response.data);
       const token = response.data.token;
       console.log("token=", token);
       Cookies.set("token", token);

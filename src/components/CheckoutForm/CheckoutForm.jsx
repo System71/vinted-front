@@ -15,16 +15,18 @@ const CheckoutForm = ({ name, price, token }) => {
     const cardElement = elements.getElement(CardElement);
 
     const stripeResponse = await stripe.createToken(cardElement, {
-      name: "Nom acheteur",
+      name: token,
     });
     console.log("stripeResponse=", stripeResponse);
 
     const stripeToken = stripeResponse.token.id;
+    console.log(stripeToken);
 
-    const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/payment",
-      { token: stripeToken, title: name, amount: price }
-    );
+    const response = await axios.post("http://localhost:3000/payment", {
+      token: stripeToken,
+      title: name,
+      amount: price,
+    });
     console.log("response.data=", response.data);
 
     if (response.data.status === "succeeded") {

@@ -1,7 +1,7 @@
 import "./header.css";
 import logo from "../../assets/images/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 import { useState } from "react";
 // import PriceSort from "../priceSort/priceSort.jsx";
@@ -31,35 +31,40 @@ const Header = ({
     setToken(null);
     navigate("/");
   };
+
+  const { pathname } = useLocation();
+
   return (
     <header className="crawler">
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>
-      <div className="search">
-        <div className="searchbar">
-          <FontAwesomeIcon icon="magnifying-glass" />
-          <input
-            type="text"
-            placeholder="Recherche des articles"
-            value={title}
-            onChange={(event) => {
-              setTitle(event.target.value);
-            }}
-          />
-        </div>
-        <div className="sortby">
-          <p>Trier par prix</p>
-          <input
-            type="checkbox"
-            name="price-sort"
-            id="price-sort"
-            onChange={() => {
-              setPriceAsc(!priceAsc);
-            }}
-          />
-          <p>Prix entre :</p>
-          {/* <PriceSort
+
+      {pathname === "/" && (
+        <div className="search">
+          <div className="searchbar">
+            <FontAwesomeIcon icon="magnifying-glass" />
+            <input
+              type="text"
+              placeholder="Recherche des articles"
+              value={title}
+              onChange={(event) => {
+                setTitle(event.target.value);
+              }}
+            />
+          </div>
+          <div className="sortby">
+            <p>Trier par prix</p>
+            <input
+              type="checkbox"
+              name="price-sort"
+              id="price-sort"
+              onChange={() => {
+                setPriceAsc(!priceAsc);
+              }}
+            />
+            {/* <p>Prix entre :</p> */}
+            {/* <PriceSort
             values={values}
             setValues={setValues}
             setPriceMin={setPriceMin}
@@ -67,8 +72,10 @@ const Header = ({
             priceMin={priceMin}
             priceMax={priceMax}
           /> */}
+          </div>
         </div>
-      </div>
+      )}
+
       <div className="menu">
         <div className="left-menu">
           {token ? (
