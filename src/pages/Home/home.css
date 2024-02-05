@@ -1,6 +1,7 @@
 .hero {
   display: flex;
   align-items: center;
+  width: 100%;
   height: 450px;
   overflow: hidden;
   position: relative;
@@ -89,7 +90,22 @@
   font-size: 14px;
 }
 
+@media (max-width: 576px) {
+  .offers {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .offer {
+    width: 100%;
+  }
+}
+
 @media (max-width: 960px) {
+  .hero {
+    width: 100%;
+  }
+
   .hero-box {
     display: none;
   }
