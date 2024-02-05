@@ -73,6 +73,21 @@
   justify-content: space-between;
 }
 
+.price-section-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.price-section-right input {
+  width: auto;
+}
+
+.price-section-right > div {
+  display: flex;
+  align-items: center;
+}
+
 .publish-form button {
   color: white;
   background-color: #0ab1ba;

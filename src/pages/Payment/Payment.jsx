@@ -18,27 +18,33 @@ const Payment = ({ token }) => {
   return token ? (
     <div className="payment">
       <div className="payment-container crawler">
-        <h4>Résumé de la commande</h4>
-        <div>
-          <p>Commande</p>
-          <span>{price} €</span>
+        <div className="payment-first-part">
+          <h4>Résumé de la commande</h4>
+          <div>
+            <p>Commande</p>
+            <span>{price} €</span>
+          </div>
+          <div>
+            <p>Frais protection acheteurs</p>
+            <span>{protectionPrice} €</span>
+          </div>
+          <div>
+            <p>Frais de port</p>
+            <span>{shippingFees} €</span>
+          </div>
         </div>
-        <div>
-          <p>Frais protection acheteurs</p>
-          <span>{protectionPrice} €</span>
+        <div className="payment-second-part">
+          <div className="payment-total">
+            <p>TOTAL </p>
+            <span>{totalPrice} €</span>
+          </div>
+          <p>
+            Il ne vous reste plus qu'une étape pour vous offrir {name}. Vous
+            allez payer {totalPrice} € (frais de protection et frais de port
+            inclus).
+          </p>
         </div>
-        <div>
-          <p>Frais de port</p>
-          <span>{shippingFees} €</span>
-        </div>
-        <div>
-          <p>TOTAL </p>
-          <span>{totalPrice} €</span>
-        </div>
-        <p>
-          Il ne vous reste plus qu'une étape pour vous offrir {name}. Vous allez
-          payer {totalPrice} € (frais de protection et frais de port inclus).
-        </p>
+
         <Elements stripe={stripePromise}>
           <CheckoutForm name={name} price={price} token={token} />
         </Elements>

@@ -104,13 +104,13 @@ const Publish = ({ token }) => {
             </div>
             <div className="article-information">
               <label htmlFor="article-description">Décris ton article</label>
-              <textarea
+              {/* <textarea
                 name=""
                 id=""
                 cols="30"
                 rows="10"
                 placeholder="ex : porté quelque fois, taille correctement"
-              ></textarea>
+              ></textarea> */}
               <input
                 type="text"
                 name="article-description"

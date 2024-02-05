@@ -88,3 +88,15 @@
   color: black;
   font-size: 14px;
 }
+
+@media (max-width: 960px) {
+  .hero-box {
+    display: none;
+  }
+}
+
+@media (max-width: 1223px) {
+  .offers {
+    width: 100%;
+  }
+}
